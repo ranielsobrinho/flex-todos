@@ -1,5 +1,7 @@
 import Api from "../../services/Api"
+import './index.css'
 import { useEffect, useState } from 'react'
+import SignForm from "../../components/SignForm"
 
 export default function Home() {
   const [users, setUsers] = useState([])
@@ -13,6 +15,8 @@ export default function Home() {
   })
 
   return (
-    <h1>Hello world home</h1>
+    <div className="container">
+      <SignForm />
+    </div>
   )
 }
