@@ -1,10 +1,10 @@
-import axios from 'axios'
+import axios from "axios";
 
-let token = sessionStorage.getItem('token')
+let token = sessionStorage.getItem("token");
 
 const Api = axios.create({
-  baseURL: 'http://localhost:5000/api',
-  headers: {'Authorization': `Bearer ${token}`}
-})
+  baseURL: "http://localhost:5000/api",
+  headers: { Authorization: `Bearer ${token}` },
+});
 
-export default Api
+export default Api;
