@@ -4,6 +4,10 @@ Header {
   justify-content: space-between;
 }
 
+.ant-layout-header {
+  padding: 0 10px;
+}
+
 .logo {
   color: white;
   margin: 0;
