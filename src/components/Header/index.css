@@ -1,0 +1,10 @@
+Header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  color: white;
+  margin: 0;
+}
