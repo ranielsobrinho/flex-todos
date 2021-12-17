@@ -1,0 +1,22 @@
+.ant-card-bordered {
+  border-radius: 0.5rem;
+  margin-top: 0.2rem;
+}
+
+@media screen and (min-width: 720px) {
+  .todo-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .ant-card-bordered {
+    width: 90%;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .ant-card-bordered {
+    width: 60%;
+  }
+}
