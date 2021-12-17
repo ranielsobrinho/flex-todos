@@ -1,0 +1,19 @@
+.todo-form {
+  display: flex;
+  justify-content: center;
+  align-items: baseline;
+  margin-top: 0.2rem;
+}
+.todo-form > input {
+  border: none;
+  border-bottom: 1px solid #40a9ff;
+  background-color: #f0f2f5;
+  width: 80%;
+  margin: 0;
+}
+
+@media screen and (min-width: 720px) {
+  .todo-form > input {
+    width: 60%;
+  }
+}
