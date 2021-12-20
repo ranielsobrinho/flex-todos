@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import "./index.css";
 import Api from "../../services/Api";
 import { useParams, useNavigate } from "react-router-dom";
 import { Button } from "antd";
@@ -49,33 +50,35 @@ export default function EditTodo() {
       .catch((error) => console.log(error));
   }
   return (
-    <div>
+    <div className="edit-container">
       <h2>Edit todo here</h2>
-      <form onSubmit={handleSubmit(submit)}>
+      <form onSubmit={handleSubmit(submit)} className="edit-form">
         <input
           type="text"
           {...register("content")}
           placeholder="Edite sua tarefa aqui."
         />
-        <Button type="primary" htmlType="submit">
-          Editar
-        </Button>
-        <Button
-          type="text"
-          onClick={() => {
-            cancel();
-          }}
-        >
-          Cancelar
-        </Button>
-        <Button
-          type="link"
-          onClick={() => {
-            deleteTodo(id);
-          }}
-        >
-          Deletar tarefa
-        </Button>
+        <div className="edit-buttons">
+          <Button type="primary" htmlType="submit">
+            Editar
+          </Button>
+          <Button
+            type="text"
+            onClick={() => {
+              cancel();
+            }}
+          >
+            Cancelar
+          </Button>
+          <Button
+            type="link"
+            onClick={() => {
+              deleteTodo(id);
+            }}
+          >
+            Deletar tarefa
+          </Button>
+        </div>
       </form>
     </div>
   );
