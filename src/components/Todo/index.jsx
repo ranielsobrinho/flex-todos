@@ -1,11 +1,12 @@
 import React, { useState, useEffect } from "react";
 import "./index.css";
-import { Button, Card } from "antd";
+import { Button, Card, Spin, Space } from "antd";
 import Api from "../../services/Api";
 import { useNavigate } from "react-router-dom";
 
 export default function Todo() {
   const [todos, setTodos] = useState([]);
+  const [loading, setLoading] = useState(false);
   const id = sessionStorage.getItem("userId");
   const navigate = useNavigate();
 
@@ -13,6 +14,7 @@ export default function Todo() {
     Api.get(`/users/${id}`)
       .then(({ data }) => {
         setTodos(data.data.todos);
+        setLoading(true);
       })
       .catch((err) => console.log(err));
   });
@@ -22,6 +24,11 @@ export default function Todo() {
   }
   return (
     <div className="todo-container">
+      {!loading && (
+        <Space>
+          <Spin size="large" />
+        </Space>
+      )}
       {todos.map((todo) => {
         return (
           <Card key={todo.id} className="card-content">
