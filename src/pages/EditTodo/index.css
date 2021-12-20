@@ -1,0 +1,43 @@
+.edit-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.edit-container > h2 {
+  font-weight: 600;
+  color: #40a9ff;
+}
+
+.edit-form {
+  display: flex;
+  flex-direction: column;
+}
+
+.edit-form > input {
+  width: 98vw;
+}
+
+.edit-buttons {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+
+.edit-buttons > .ant-btn-link {
+  color: red;
+}
+
+@media screen and (min-width: 720px) {
+  .edit-form > input {
+    width: 70vw;
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .edit-form > input {
+    width: 45vw;
+  }
+}
