@@ -1,11 +1,20 @@
 import { Button } from "antd";
 import "./index.css";
 import { useForm } from "react-hook-form";
+import Api from "../../services/Api";
 
 export default function TodoForm() {
   const { register, handleSubmit } = useForm();
+  const user = sessionStorage.getItem("userId");
   const submit = (data) => {
-    console.log(data);
+    Api.post("/todos", {
+      content: data.content,
+      userId: user,
+    })
+      .then((res) => {
+        alert("Enviado com sucesso.");
+      })
+      .catch((error) => alert("Algum ruim aconteceu."));
   };
   return (
     <div>
