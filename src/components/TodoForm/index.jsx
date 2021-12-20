@@ -1,4 +1,4 @@
-import { Button } from "antd";
+import { Button, message } from "antd";
 import "./index.css";
 import { useForm } from "react-hook-form";
 import Api from "../../services/Api";
@@ -12,9 +12,13 @@ export default function TodoForm() {
       userId: user,
     })
       .then((res) => {
-        alert("Enviado com sucesso.");
+        message.info("Tarefa adicionada com sucesso.");
       })
-      .catch((error) => alert("Algum ruim aconteceu."));
+      .catch((error) =>
+        message.error(
+          "Houve um problema com os servidores. Tente novamente mais tarde."
+        )
+      );
   };
   return (
     <div>

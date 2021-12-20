@@ -1,7 +1,7 @@
 import React from "react";
 import "./index.css";
 import { useForm } from "react-hook-form";
-import { Button } from "antd";
+import { Button, message } from "antd";
 import Api from "../../services/Api";
 import { useNavigate } from "react-router-dom";
 
@@ -12,10 +12,16 @@ export default function RegisterForm() {
   const submit = (data) => {
     Api.post("/users", data)
       .then(() => {
-        alert("Cadastro feito com sucesso. Faça o login para continuar.");
+        message.success(
+          "Cadastro feito com sucesso. Faça o login para continuar."
+        );
         navigate("/");
       })
-      .catch((error) => console.log(error));
+      .catch((error) =>
+        message.error(
+          "Houve um problema com os servidores. Tente novamente mais tarde."
+        )
+      );
   };
   return (
     <div className="form-container">
